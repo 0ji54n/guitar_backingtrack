@@ -1,0 +1,17 @@
+.venv/
+CLAUDE.local.md
+__pycache__/
+*.pyc
+*_no_guitar.*
+*_guitar_only.*
+
+# Downloaded Roformer model weights (large; fetch once per README).
+models/
+
+# Local scratch / test artifacts.
+_smoke*.py
+test_tone.wav
+
+# Claude Code transient/local files (the backing-track skill stays tracked).
+.claude/scheduled_tasks.lock
+.claude/settings.local.json

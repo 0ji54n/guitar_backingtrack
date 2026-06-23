@@ -1,0 +1,17 @@
+# guitar-bt: remove the electric guitar from a song to make a backing track.
+# ffmpeg must be installed separately and available on PATH.
+
+# --- URL input ---
+yt-dlp>=2024.1     # download audio from YouTube / SoundCloud / ~1800 other sites
+
+# --- Guitar separation model ---
+# The model architecture is vendored in roformer_arch/; these are its deps.
+torch>=2.0                  # inference (CPU build is fine; auto-uses CUDA if present)
+numpy>=1.23
+soundfile>=0.12            # read/write WAV
+librosa>=0.10              # mel filter bank for the Roformer STFT front-end
+ml-collections>=0.1.1      # ConfigDict for the model's YAML config
+rotary-embedding-torch>=0.6 # rotary positional embeddings used by the Roformer
+einops>=0.6                # tensor rearranging
+beartype>=0.14             # runtime type checks in the vendored model code
+PyYAML>=6.0                # load the model config
